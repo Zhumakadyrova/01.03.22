@@ -123,3 +123,30 @@ text2.addEventListener("keydown", function(event){
   }
 })
 
+
+const text6 = document.querySelector("#info6");
+const btn6 = document.querySelector("#btn6");
+const list6 = document.querySelector("#list6");
+function removeItem() {
+  this.parentElement.remove();
+}
+function addItem() {
+  if (text6.value.trim() !== "") {
+    const ulLi = document.createElement("li");
+    list6.append(ulLi);
+    ulLi.textContent = text6.value;
+
+    const del = document.createElement("button");
+    ulLi.append(del);
+    del.textContent = "Erase";
+    del.addEventListener("click", removeItem);
+  }
+}
+btn6.addEventListener("click", addItem);
+text6.addEventListener("keydown", function(event){
+  if(event.code === "Enter") {
+    addItem()
+  }
+})
+
+
