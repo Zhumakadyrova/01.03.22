@@ -72,9 +72,7 @@ newInp.addEventListener("keydown", function(event) {
 const inp = document.querySelector("#new-info");
 const btn = document.querySelector("#btn2");
 const ul = document.querySelector("#ul2");
-function removeItem() {
-  this.parentElement.remove
-}
+
 function removeItem() {
   this.parentElement.remove();
 }
@@ -97,3 +95,31 @@ inp.addEventListener("keydown", function(event) {
     addItem();
   }
 })
+
+const text2 = document.querySelector("#text");
+const btn5 = document.querySelector("#btn5");
+const list2 = document.querySelector("#list");
+
+function removeItem() {
+  this.parentElement.remove();
+}
+function addItem() {
+  if (text2.value.trim() !== "") {
+    const ulLi = document.createElement("li");
+    list2.append(ulLi);
+    ulLi.textContent = text2.value;
+    
+    const del = document.createElement("button");
+    ulLi.append(del);
+    del.textContent = "Erase";
+    del.addEventListener("click", removeItem);
+
+  }
+}
+btn5.addEventListener("click", addItem);
+text2.addEventListener("keydown", function(event){
+  if(event.code === "Enter") {
+    addItem()
+  }
+})
+
