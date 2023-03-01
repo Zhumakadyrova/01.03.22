@@ -69,9 +69,9 @@ newInp.addEventListener("keydown", function(event) {
   }
 });
 
-const inp = document.querySelector("#new-inpt");
-const btn = document.querySelector("#add-itm");
-const ul = document.querySelector("#itms");
+const inp = document.querySelector("#new-info");
+const btn = document.querySelector("#btn2");
+const ul = document.querySelector("#ul2");
 function removeItem() {
   this.parentElement.remove
 }
@@ -88,37 +88,12 @@ function addItem () {
     const del = document.createElement ("button");
     ulLi.append(del);
     del.textContent = "Erase";
-    del.addEventListener("click", removeItem)
+    del.addEventListener("click", removeItem);
   }
 }
 btn.addEventListener("click", addItem);
 inp.addEventListener("keydown", function(event) {
   if (event.code ==="Enter") {
-    this.parentElement.addItem
+    addItem();
   }
-})
-
-const text = document.querySelector("#new-info");
-const press = document.querySelector("#btn2");
-const ul2 = document.querySelector("#ul")
-function removeItem() {
-  this.parentElement.remove();
-}
-function addItem() {
-  if (text.value.trim() !==""){
-    const ulLi = document.createElement("li");
-    ul2.append(ulLi);
-    ulLi.textContent = text.value;
-    text.value = "";
-     const del = document.createElement("button");
-     ulLi.append.del;
-     del.textContent = "Remove";
-     del.addEventListener( "click", removeItem)
-  }
-}
-press.addEventListener("click", addItem);
-text.addEventListener("keydown", function(event) {
-if (event.code ==="Enter") {
-  this.parentElement.addItem
-}
 })
